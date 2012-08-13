@@ -1,35 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/behavior"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/builder"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/config"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/exception"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/model"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/platform"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/reverse"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/task"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/lib/util"/>
-	<buildpathentry kind="src" path="vendor/propel/generator/pear"/>
-	<buildpathentry kind="src" path="vendor/propel/runtime/lib"/>
-	<buildpathentry kind="src" path="vendor/propel/runtime/pear"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/generator/behavior"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/generator/builder"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/generator/model"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/generator/platform"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/generator/util"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/misc"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/adapter"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/collection"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/connection"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/exception"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/formatter"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/map"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/om"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/parser"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/query"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/util"/>
-	<buildpathentry kind="src" path="vendor/propel/test/testsuite/runtime/validator"/>
-	<buildpathentry kind="src" path="vendor/propel/test/tools/helpers"/>
-	<buildpathentry kind="src" path="vendor/propel/test/tools/phing"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path=""/>
 </buildpath>

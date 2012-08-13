@@ -9,9 +9,16 @@ Propel::init(dirname(__FILE__) . "/build/conf/propelsandbox-conf.php");
 // Add the generated 'classes' directory to the include path
 set_include_path(dirname(__FILE__) . "/build/classes" . PATH_SEPARATOR . get_include_path());
 
+$con = Propel::getConnection();
+$con->setLogLevel(Propel::LOG_DEBUG);
+$con->useDebug(true);
+
 $movie = MovieQuery::create()->findPK(1);
 
-var_dump($movie->getPersons());
+$q = PersonQuery::create()
+                ->filterByMovie($movie);
+
+var_dump($q->find());
 
 /*
 $person = new Person();
