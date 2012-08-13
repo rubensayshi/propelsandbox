@@ -11,8 +11,8 @@ DROP TABLE IF EXISTS `movies`;
 
 CREATE TABLE `movies`
 (
-	`id` int(10) unsigned(10) NOT NULL AUTO_INCREMENT,
-	`parentId` int(10) unsigned(10) NOT NULL,
+	`id` int(10) NOT NULL AUTO_INCREMENT,
+	`parentId` int(10) NOT NULL,
 	`originalTitle` VARCHAR(255) NOT NULL,
 	`originalSubtitle` VARCHAR(255) NOT NULL,
 	`title` VARCHAR(255) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `movies`
 	`countries` VARCHAR(255) NOT NULL,
 	`url` VARCHAR(255) NOT NULL,
 	`trailer` VARCHAR(255) NOT NULL,
-	`lastEditTime` int(10) unsigned(10) NOT NULL,
+	`lastEditTime` int(10) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
 
@@ -45,7 +45,7 @@ DROP TABLE IF EXISTS `genres`;
 
 CREATE TABLE `genres`
 (
-	`id` int(10) unsigned(10) NOT NULL AUTO_INCREMENT,
+	`id` int(10) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `persons`;
 
 CREATE TABLE `persons`
 (
-	`id` int(10) unsigned(10) NOT NULL AUTO_INCREMENT,
+	`id` int(10) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	`role` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
@@ -72,8 +72,8 @@ DROP TABLE IF EXISTS `moviesGenres`;
 
 CREATE TABLE `moviesGenres`
 (
-	`movieId` int(10) unsigned(10) NOT NULL,
-	`genreId` int(10) unsigned(10) NOT NULL,
+	`movieId` int(10) NOT NULL,
+	`genreId` int(10) NOT NULL,
 	PRIMARY KEY (`movieId`,`genreId`),
 	INDEX `moviesGenres_FI_2` (`genreId`)
 ) ENGINE=MyISAM;
@@ -86,8 +86,8 @@ DROP TABLE IF EXISTS `moviesPersons`;
 
 CREATE TABLE `moviesPersons`
 (
-	`movieId` int(10) unsigned(10) NOT NULL,
-	`personId` int(10) unsigned(10) NOT NULL,
+	`movieId` int(10) NOT NULL,
+	`personId` int(10) NOT NULL,
 	PRIMARY KEY (`movieId`,`personId`),
 	INDEX `moviesPersons_FI_2` (`personId`)
 ) ENGINE=MyISAM;
