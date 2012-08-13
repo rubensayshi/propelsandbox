@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <log>
+        <type>file</type>
+        <name>/var/log/propel/propelsandbox.log</name>
+        <ident>propelsandbox</ident>
+        <level>7</level>
+    </log>
+    <propel>
+        <datasources default="propelsandbox">
+            <datasource id="propelsandbox">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;dbname=propelsandbox</dsn>
+                    <user>root</user>
+                    <password>root</password>
+                </connection>
+            </datasource>
+        </datasources>
+    </propel>
+</config>

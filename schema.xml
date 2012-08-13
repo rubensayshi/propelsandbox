@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="propelsandbox" defaultIdMethod="native">
+    <table name="movies" phpName="Movie" idMethod="native">
+        <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="parentId" phpName="ParentId" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true"/>
+        <column name="originalTitle" phpName="OriginalTitle" type="VARCHAR" size="255" required="true"/>
+        <column name="originalSubtitle" phpName="OriginalSubtitle" type="VARCHAR" size="255" required="true"/>
+        <column name="title" phpName="Title" type="VARCHAR" size="255" required="true"/>
+        <column name="subtitle" phpName="Subtitle" type="VARCHAR" size="255" required="true"/>
+        <column name="startDate" phpName="StartDate" type="DATE" required="true"/>
+        <column name="fsk" phpName="Fsk" type="SMALLINT" size="2" required="true"/>
+        <column name="directors" phpName="Directors" type="VARCHAR" size="255" required="true"/>
+        <column name="actors" phpName="Actors" type="VARCHAR" size="255" required="true"/>
+        <column name="camera" phpName="Camera" type="VARCHAR" size="255" required="true"/>
+        <column name="book" phpName="Book" type="VARCHAR" size="255" required="true"/>
+        <column name="rental" phpName="Rental" type="VARCHAR" size="255" required="true"/>
+        <column name="producers" phpName="Producers" type="VARCHAR" size="255" required="true"/>
+        <column name="lengthInMinutes" phpName="LengthInMinutes" type="SMALLINT" size="3" required="true"/>
+        <column name="createDate" phpName="CreateDate" type="DATE" required="true"/>
+        <column name="picture" phpName="Picture" type="VARCHAR" size="255" required="true"/>
+        <column name="description" phpName="Description" type="LONGVARCHAR" required="true"/>
+        <column name="languages" phpName="Languages" type="VARCHAR" size="255" required="true"/>
+        <column name="countries" phpName="Countries" type="VARCHAR" size="255" required="true"/>
+        <column name="url" phpName="Url" type="VARCHAR" size="255" required="true"/>
+        <column name="trailer" phpName="Trailer" type="VARCHAR" size="255" required="true"/>
+        <column name="lastEditTime" phpName="LastEditTime" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true"/>
+
+        <behavior name="alternative_coding_standards">
+            <parameter name="tab_size" value="4" />
+        </behavior>
+    </table>   
+
+    <table name="genres" phpName="Genre" idMethod="native">
+        <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+
+        <behavior name="alternative_coding_standards">
+            <parameter name="tab_size" value="4" />
+        </behavior>
+    </table>
+
+    <table name="persons" phpName="Person" idMethod="native">
+        <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+        <column name="role" phpName="Role" type="VARCHAR" size="255" required="true"/>
+
+        <behavior name="alternative_coding_standards">
+            <parameter name="tab_size" value="4" />
+        </behavior>
+    </table>
+
+    <table name="moviesGenres" isCrossRef="true">
+        <column name="movieId" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true" primaryKey="true"/>
+        <column name="genreId" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true" primaryKey="true"/>
+     
+        <foreign-key foreignTable="movies" skipSql="true" phpName="Movie">
+            <reference local="movieId" foreign="id"/>
+        </foreign-key>
+     
+        <foreign-key foreignTable="genres" skipSql="true" phpName="Genre">
+            <reference local="genreId" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="moviesPersons" isCrossRef="true">
+        <column name="movieId" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true" primaryKey="true"/>
+        <column name="personId" type="INTEGER" size="10" sqlType="int(10) unsigned" required="true" primaryKey="true"/>
+
+        <foreign-key foreignTable="movies" skipSql="true" phpName="Movie">
+            <reference local="movieId" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="persons" skipSql="true" phpName="Person">
+            <reference local="personId" foreign="id"/>
+        </foreign-key>
+    </table>
+</database>
